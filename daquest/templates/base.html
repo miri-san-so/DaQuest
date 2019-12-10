@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/css/base.css" />
+    {% block link_css %}{% endblock link_css %}
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair+Display:700&display=swap"
+      rel="stylesheet"
+    />
+    <title>DaQuest{% block title %}{% endblock title %}</title>
+  </head>
+  <body>
+    <nav>
+      <div class="head">
+        <h1 class="app_name"><a href="/question">DaQuest</a></h1>
+        <a href="{% url 'previous_question:previous_question' %}" class="previous_question">
+          <div class="previous_question_div">Previous Questions</div>
+        </a>
+      </div>
+    </nav>
+
+    {% block content %}{% endblock content %}
+
+  </body>
+  <footer></footer>
+
+</html>

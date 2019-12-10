@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block link_css %}
+<link rel="stylesheet" href="../static/css/signup2.css" />
+{% endblock link_css %}
+
+{% block title %} | Sign up
+{% endblock title %}
+
+{% block content %}
+    <form method= "POST" class="form_signup">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn">Sign-up</button>
+    </form>
+{% endblock content %}

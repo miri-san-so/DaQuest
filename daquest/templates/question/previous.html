@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block link_css %}
+<link rel="stylesheet" href="../static/css/previous_question.css" />
+{% endblock link_css %}
+
+{% block content %}
+<div class="question_div">
+  <h1 class="previous_title">Previous Question</h1>
+  <p class="underscore">─</p>
+</div>
+    {% for question in questions %}
+    <div class="question_text">
+        <p style="font-size: 25px;padding-bottom: 0;">{{ question.question_title }}</p>
+        <p><b>{{ question.published_date }}</b></p>
+        <hr style="border: 1px solid rgb(220, 220, 220);">
+        <p>
+            {% autoescape off %}
+                {{ question.question_text|linebreaksbr}}
+            {% endautoescape %}
+        </p>
+  </div>
+
+    {% endfor %}
+
+{% endblock content %}

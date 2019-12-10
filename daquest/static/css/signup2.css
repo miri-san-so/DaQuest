@@ -1,0 +1,88 @@
+.form_signup {
+  background-color: white;
+  font-family: "Open Sans";
+  padding: 50px 50px 50px 50px;
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  width: 600px;
+  height: 500px;
+  border-radius: 20px;
+  margin-top: 2%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+}
+
+p {
+  margin-bottom: 3%;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(58, 58, 58);
+  margin-bottom: 1%;
+}
+
+input {
+  float: right;
+  padding: 3px;
+  font-size: 16px;
+  width: 50%;
+  border: none;
+  border-bottom: 1px solid black !important; 
+  transition: linear;
+  transition-duration: 0.2s;
+}
+
+input:focus {
+  caret-color: black;
+  border-bottom: 1.5px solid rgb(57, 0, 245);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  outline: none;
+}
+
+input:valid {
+  color: green;
+  border-bottom: 1.5px solid rgb(0, 245, 131);
+}
+
+input:invalid {
+  color: red;
+  border-bottom-color: red;
+}
+
+.errorlist {
+  list-style-type: none;
+  font-size: 12px;
+  color: red;
+}
+
+.btn {
+  cursor: pointer;
+  pointer-events: all;
+  border-radius: 7px;
+  font-family: "Roboto";
+  font-size: 13px;
+  letter-spacing: 3px;
+  justify-self: center;
+  align-self: center;
+  width: 150px;
+  height: 40px;
+  border: 1px solid black;
+  background-color: white;
+  transition: ease-in-out;
+  transition-duration: 0.5s;
+}
+
+.btn:hover {
+  background-color: aqua;
+  border: none;
+  border-radius: 0px;
+}
+
+.btn:focus {
+  border-radius: 7px;
+  outline: 1px solid rgb(57, 0, 245);
+}

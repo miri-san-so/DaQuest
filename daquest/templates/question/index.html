@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block link_css %}
+<link rel="stylesheet" href="../static/css/index.css" />
+{% endblock link_css %}
+
+{% block content %}
+<div class="question_div">
+  <h1 class="today_title">Todays Question</h1>
+  <p class="underscore">─</p>
+  <div class="question_text">
+    <p style="font-weight: bold; font-size: 30px; padding-bottom: 30px">{{ latest_question.question_title }}</p>
+    <p>
+      {% autoescape off %}
+        {{ latest_question.question_text|linebreaksbr}}
+      {% endautoescape %}
+    </p>
+  </div>
+  <a href="" class="solution_link">Get Solution</a>
+</div>
+
+<div class="comment_form_div">
+  <h1>Add Comment</h1>
+  <p class="underscore">─</p>
+  <form method="post" class="comment_form">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="comment_button">COMMENT</button>
+  </form>
+</div>
+<div class="comments">
+  <h1>Comments</h1>
+  <p class="underscore">─</p>
+  <div class="comments_list_div">
+  <ul class="comments_list">
+  {% for comment in comments  %}
+    <li class="comment"><p><b>{{ comment.author }} </b>: {{ comment.comment_text }}</p></li>
+    <hr>
+  {% endfor %}
+  </ul>
+</div>
+
+{% endblock content %}
