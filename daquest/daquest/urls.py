@@ -22,6 +22,7 @@ from django.urls import path, include
 urlpatterns = [path('previous_question/', include('previous_question.urls')),
                path('', include('questions.urls')),
                path('question/', include('questions.urls')),
+               path('solution/', include('solution.urls')),
                path('admin/', admin.site.urls),
                ]
 

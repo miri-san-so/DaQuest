@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block link_css %}
+<link rel="stylesheet" href="../static/css/solution2.css" />
+{% endblock link_css %}
+
+
+
+{% block content %}
+<div class="solution_div">
+    <h1 class="question_title">{{latest_question.question_title}}</h1>
+    <p class="question_text">{{latest_question.question_text|linebreaksbr}}</p>
+    <h3 class="solution_title">Solution</h3>
+    {% for solution in solutions %}
+        <p class="solution_text">{{solution.solution_text|linebreaksbr }}</p>    
+    {% endfor %}
+</div>
+{% endblock content %}
+

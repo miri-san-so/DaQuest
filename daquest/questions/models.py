@@ -20,3 +20,11 @@ class Comments(models.Model):
 
     def __str__(self):
         return self.comment_text
+
+class Solutions(models.Model):
+    question = models.ForeignKey(Questions, on_delete=models.CASCADE)
+    solution_text =  models.TextField()
+    published_date_solution = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.solution_text
